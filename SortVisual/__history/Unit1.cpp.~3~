@@ -1,0 +1,28 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	TrackBar1->Position =  StrToInt(Edit2->Text);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Edit2Change(TObject *Sender)
+{
+//	TrackBar1->Position =  StrToInt(Edit2->Text);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::TrackBar1Change(TObject *Sender)
+{
+	Edit2->Text = IntToStr(TrackBar1->Position);
+}
+//---------------------------------------------------------------------------
+
